@@ -18,9 +18,9 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($categorias as $categoria): ?>
+                <?php $index=1; foreach ($categorias as $categoria): ?>
                 <tr>
-                    <td><?= $this->Number->format($categoria->id) ?></td>
+                    <td><?= $index ?></td>
                     <td><?= h($categoria->categoria) ?></td>
                     <td><?= h($categoria->estado) ?></td>
                     <td class="actions">
@@ -29,7 +29,7 @@
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $categoria->id], ['confirm' => __('Are you sure you want to delete # {0}?', $categoria->id)]) ?>
                     </td>
                 </tr>
-                <?php endforeach; ?>
+                <?php $index++; endforeach; ?>
             </tbody>
         </table>
     </div>
